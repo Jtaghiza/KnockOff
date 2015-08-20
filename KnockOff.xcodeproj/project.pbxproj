@@ -15,6 +15,11 @@
 		3FCFA2EB1B5F2A6C002FAE18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCFA2EA1B5F2A6C002FAE18 /* Images.xcassets */; };
 		3FCFA2EE1B5F2A6C002FAE18 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCFA2EC1B5F2A6C002FAE18 /* LaunchScreen.xib */; };
 		3FCFA2FA1B5F2A6C002FAE18 /* KnockOffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCFA2F91B5F2A6C002FAE18 /* KnockOffTests.swift */; };
+		3FEC904C1B72EB9400EC47E5 /* userShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC904B1B72EB9400EC47E5 /* userShape.swift */; };
+		3FEC90521B74E5EA00EC47E5 /* EnemySpriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC90511B74E5EA00EC47E5 /* EnemySpriteController.swift */; };
+		3FEC90541B74E66700EC47E5 /* EnemyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC90531B74E66700EC47E5 /* EnemyShape.swift */; };
+		3FEC90561B7AC77600EC47E5 /* PowerUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC90551B7AC77600EC47E5 /* PowerUps.swift */; };
+		3FEC90581B7ACDCE00EC47E5 /* PowerUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC90571B7ACDCE00EC47E5 /* PowerUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		3FCFA2F31B5F2A6C002FAE18 /* KnockOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnockOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCFA2F81B5F2A6C002FAE18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FCFA2F91B5F2A6C002FAE18 /* KnockOffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnockOffTests.swift; sourceTree = "<group>"; };
+		3FEC904B1B72EB9400EC47E5 /* userShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userShape.swift; sourceTree = "<group>"; };
+		3FEC90511B74E5EA00EC47E5 /* EnemySpriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemySpriteController.swift; sourceTree = "<group>"; };
+		3FEC90531B74E66700EC47E5 /* EnemyShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnemyShape.swift; path = ../EnemyShape.swift; sourceTree = "<group>"; };
+		3FEC90551B7AC77600EC47E5 /* PowerUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerUps.swift; path = ../PowerUps.swift; sourceTree = "<group>"; };
+		3FEC90571B7ACDCE00EC47E5 /* PowerUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerUpController.swift; path = ../PowerUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +93,13 @@
 			children = (
 				3FCFA2DF1B5F2A6C002FAE18 /* AppDelegate.swift */,
 				3FCFA2E11B5F2A6C002FAE18 /* GameScene.sks */,
-				3FCFA2E31B5F2A6C002FAE18 /* GameScene.swift */,
 				3FCFA2E51B5F2A6C002FAE18 /* GameViewController.swift */,
+				3FCFA2E31B5F2A6C002FAE18 /* GameScene.swift */,
+				3FEC90531B74E66700EC47E5 /* EnemyShape.swift */,
+				3FEC90511B74E5EA00EC47E5 /* EnemySpriteController.swift */,
+				3FEC904B1B72EB9400EC47E5 /* userShape.swift */,
+				3FEC90551B7AC77600EC47E5 /* PowerUps.swift */,
+				3FEC90571B7ACDCE00EC47E5 /* PowerUpController.swift */,
 				3FCFA2E71B5F2A6C002FAE18 /* Main.storyboard */,
 				3FCFA2EA1B5F2A6C002FAE18 /* Images.xcassets */,
 				3FCFA2EC1B5F2A6C002FAE18 /* LaunchScreen.xib */,
@@ -219,8 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FEC90581B7ACDCE00EC47E5 /* PowerUpController.swift in Sources */,
 				3FCFA2E41B5F2A6C002FAE18 /* GameScene.swift in Sources */,
+				3FEC90521B74E5EA00EC47E5 /* EnemySpriteController.swift in Sources */,
 				3FCFA2E61B5F2A6C002FAE18 /* GameViewController.swift in Sources */,
+				3FEC90541B74E66700EC47E5 /* EnemyShape.swift in Sources */,
+				3FEC904C1B72EB9400EC47E5 /* userShape.swift in Sources */,
+				3FEC90561B7AC77600EC47E5 /* PowerUps.swift in Sources */,
 				3FCFA2E01B5F2A6C002FAE18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +439,7 @@
 				3FCFA2FF1B5F2A6C002FAE18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FCFA3001B5F2A6C002FAE18 /* Build configuration list for PBXNativeTarget "KnockOffTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +448,7 @@
 				3FCFA3021B5F2A6C002FAE18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

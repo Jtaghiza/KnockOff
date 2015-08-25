@@ -203,14 +203,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 _bomberLastShootTime = currentTime
             }
         }
-        //powerUp updates
-        if currentTime - _powerUpTime >= 30 //SetupPowerUp. Creates a powerup at a random time interval between 30 sec to a minute
-        {
-            powerUps.makeHealthPowerUp()
-            _powerUpTime = currentTime
-        }
-        
-        if currentTime - _sprayerLastShootTime >= 2
+        //SprayerWeapon updates
+        if currentTime - _sprayerLastShootTime >= 10
         {
             
             if let userShape = childNodeWithName("userShape") as? UserShape
@@ -219,6 +213,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 _sprayerLastShootTime = currentTime
             }
         }
+        //powerUp updates
+        if currentTime - _powerUpTime >= 30 //SetupPowerUp. Creates a powerup at a random time interval between 30 sec to a minute
+        {
+            powerUps.makeHealthPowerUp()
+            _powerUpTime = currentTime
+        }
+        
+        
         
     }
     
@@ -227,7 +229,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (contact.bodyA.node?.name == "userShape")
         {
             //If a weapon comes into contact with the player-------------------------------
-            if ((contact.bodyB.node?.name == "swarmerWeapon") || (contact.bodyB.node?.name == "bomberWeapon"))
+            if ((contact.bodyB.node?.name == "swarmerWeapon") || (contact.bodyB.node?.name == "bomberWeapon") || (contact.bodyB.node?.name == "sprayerWeapon"))
             {
                 contact.bodyB.node?.removeFromParent()
                 if let userShape = contact.bodyA.node as? UserShape
@@ -242,7 +244,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //------------------------------------------------------------------------------
             
             //If an enemy comes into contact with a player
-            if (contact.bodyB.node?.name == "swarmer" || contact.bodyB.node?.name == "bomber")
+            if (contact.bodyB.node?.name == "swarmer" || contact.bodyB.node?.name == "bomber" || contact.bodyB.node?.name == "sprayer")
             {
                 
                if let enemyShape = contact.bodyB.node as? EnemyShape

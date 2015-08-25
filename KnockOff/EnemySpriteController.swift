@@ -11,6 +11,7 @@ import SpriteKit
 class EnemySpriteController {
     //var enemyShapes: [EnemyShape] = []
     var enemyShapes = NSMutableArray()
+    var sprayerBulletSpeed:CGFloat = 0.3
     
     func makeSwarmer()->SKShapeNode
     {
@@ -140,7 +141,7 @@ class EnemySpriteController {
         let xSpawnPoint = random(min: newSprayer.frame.size.width/2, max: screen.size.width - newSprayer.frame.size.width/2)
         let ySpawnPoint = random(min: newSprayer.frame.size.height/2, max: screen.size.height - newSprayer.frame.size.height/2)
         
-        newSprayer.position = CGPointMake(xSpawnPoint, screen.size.height - newSprayer.frame.size.height/2)
+        newSprayer.position = CGPointMake(xSpawnPoint, ySpawnPoint)
         newSprayer.name = "sprayer"
         newSprayer.fillColor = SKColor.grayColor()
         
@@ -156,7 +157,7 @@ class EnemySpriteController {
         
         newSprayer.physicsBody?.categoryBitMask = PhysicsCategory.Enemy
         newSprayer.physicsBody?.contactTestBitMask = PhysicsCategory.User
-        newSprayer.physicsBody?.collisionBitMask = PhysicsCategory.edge | PhysicsCategory.User
+        newSprayer.physicsBody?.collisionBitMask = PhysicsCategory.None
         
         
         return newSprayer
@@ -195,10 +196,14 @@ class EnemySpriteController {
                     bullets[i].physicsBody?.collisionBitMask = PhysicsCategory.None
                     
                 }
-//                bullets[0].physicsBody?.applyForce(CGVectorMake(0, -5))
-//                bullets[1].physicsBody?.applyForce(CGVectorMake(-5, 0))
-//                bullets[2].physicsBody?.applyForce(CGVectorMake(5,  0))
-//                bullets[3].physicsBody?.applyForce(CGVectorMake(0,  5))
+                bullets[0].physicsBody?.applyImpulse(CGVectorMake(0, -sprayerBulletSpeed))
+                bullets[1].physicsBody?.applyImpulse(CGVectorMake(-sprayerBulletSpeed, 0))
+                bullets[2].physicsBody?.applyImpulse(CGVectorMake(sprayerBulletSpeed,  0))
+                bullets[3].physicsBody?.applyImpulse(CGVectorMake(0,  sprayerBulletSpeed))
+                bullets[4].physicsBody?.applyImpulse(CGVectorMake(sprayerBulletSpeed, sprayerBulletSpeed))
+                bullets[5].physicsBody?.applyImpulse(CGVectorMake(-sprayerBulletSpeed, -sprayerBulletSpeed))
+                bullets[6].physicsBody?.applyImpulse(CGVectorMake(-sprayerBulletSpeed, sprayerBulletSpeed))
+                bullets[7].physicsBody?.applyImpulse(CGVectorMake(sprayerBulletSpeed, -sprayerBulletSpeed))
 
                 
                 //bullets[0].physicsBody?.applyForce(CGVectorMake(0, 10))
